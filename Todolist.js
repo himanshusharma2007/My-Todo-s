@@ -1,4 +1,4 @@
-  <script>
+
       const title = document.getElementById("title");
       const desc = document.getElementById("desc");
       const todoTableBody = document.getElementById("todoTableBody");
@@ -62,4 +62,4 @@
           alert("Please enter todo details");
         }
       }
-    </script>
+
