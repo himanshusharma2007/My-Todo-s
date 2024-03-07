@@ -13,7 +13,7 @@
             // Check if retrievedValuesString is not null or undefined
             if (retrievedValuesString) {
               const retrievedValues = JSON.parse(retrievedValuesString);
-              createTodoItem(key, retrievedValues[0], retrievedValues[1]);
+              createTodoItem(key, retrievedValues[0], retrievedValues[1],retrievedValues[2]);
             } else {
               console.error(`Error parsing JSON for key: ${key}`);
             }
@@ -25,7 +25,7 @@
       }
       
 
-      function createTodoItem(titleKey, descValue,addtime) {
+      function createTodoItem(titleKey, descValue,addtime,addDate) {
  
         // console.log('date :>> ', );
         const newRow = document.createElement("tr");
@@ -33,8 +33,12 @@
         const titleTd = document.createElement("td");
         const descTd = document.createElement("td");
         const deleteTd = document.createElement("td");
+        const dateTd = document.createElement("td");
+
         const todoTime = document.createElement("td");
+
         todoTime.innerText = addtime;
+        dateTd.innerText=addDate;
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("btnClass");
         deleteBtn.innerText = "Delete";
@@ -48,8 +52,11 @@
         newRow.appendChild(titleTd);
         newRow.appendChild(descTd);
         newRow.appendChild(deleteTd);
+        newRow.appendChild(dateTd);
+
         newRow.appendChild(todoTime);
 
+        
         todoTableBody.appendChild(newRow);
 
         deleteBtn.addEventListener("click", () => {
@@ -64,9 +71,14 @@
         const hours = date.getHours();
         const minute = date.getMinutes();
         const seconds = date.getSeconds();
+        const day=date.getDate();
+        const month=date.getMonth()+1;
+      
+        const addDate=`${day}/${month}` ;
+        // console.log('addDate :>> ',month );
         const addtime=  `${hours}:${minute}:${seconds}`;
        
-        const Values = [desc.value,addtime];
+        const Values = [desc.value,addtime,addDate];
         const valuesString = JSON.stringify(Values);
 
         
@@ -74,7 +86,7 @@
           localStorage.setItem(titleKey, valuesString);
           const retrievedValuesString = localStorage.getItem(titleKey);
           const retrievedValues = JSON.parse(retrievedValuesString);
-          createTodoItem(titleKey, retrievedValues[0],retrievedValues[1]);
+          createTodoItem(titleKey, retrievedValues[0],retrievedValues[1],retrievedValues[2]);
           title.value = "";
           desc.value = "";
         } else {

@@ -9,7 +9,7 @@ body {
   background-color: rgb(180, 180, 237);
 }
 form {
-  width: 55%;
+  width: 60%;
   height: auto;
   min-height: 90vh;
   margin: 2em 2em 0em 2em;
@@ -27,12 +27,12 @@ form {
 
 table {
   border-collapse: separate;
-  border-spacing: 30px;
+  border-spacing: 40px;
   overflow-y: auto;
 }
 .btnClass {
   width: 60px;
-  height: 20px;
+  height: 30px;
   border: none;
   border-radius: 5px;
   display: flex;
@@ -83,21 +83,48 @@ thead th {
 .heading {
   margin-top: 0;
 }
+@media (max-width: 1300px){
+  form {
+    width:70%;
+    background-color: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+   
+  }
+}
 @media (max-width: 1000px) {
-  body {
+  body,html {
+    /* background-color: white; */
     background-color: rgb(145, 145, 229);
     margin: 0;
     padding: 0;
   }
-  form {
-    margin: 0;
-    padding: 0;
-    background: none;
-    /* background-color: red; */
+  table {
+    border-collapse: separate;
+    border-spacing: 20px;
+    overflow-y: auto;
+  }
+  .inputFeild{
+   width: 100%;
   }
   thead th {
-    font-size: large;
+    font-size: x-large;
     color: rgb(56, 56, 89);
+  }
+.btns {
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: small;
+  }
+  form {
+    width:80%;
+    background-color: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+   
   }
 }
 @media (max-width: 480px) {
