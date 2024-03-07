@@ -20,7 +20,7 @@
           }
         }else{
           console.log('error undefined');
-          alert('You do not add any Todo yet');
+          alert('Todo is empty');
         }
       }
       
