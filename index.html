@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Todo List</title>
-    <link rel="stylesheet" href="todo.css">
-  
+    <link rel="stylesheet" href="todo.css" />
   </head>
 
-  <body onload="displayItems()">
+  <body>
     <!-- <label for="todo">Title:</label> -->
     <form action="">
       <h1 class="heading">MY Todo-s</h1>
@@ -27,7 +26,21 @@
         placeholder="Description of the work here "
       />
       <br />
-      <input id="btnAdd" type="button" value="ADD" onclick="addItem()" />
+      <div class="divbtns">
+        <input
+          id="btnAdd"
+          class="btns"
+          type="button"
+          value="ADD"
+          onclick="addItem()"
+        />
+        <input style="width: 100px;"
+          class="btns"
+          type="button"
+          value="Old Todos"
+          onclick="displayItems()"
+        />
+      </div>
 
       <table>
         <thead>
@@ -44,7 +57,6 @@
         </div>
       </table>
     </form>
-<script src="Todolist.js"> </script>
-  
+    <script src="Todolist.js"></script>
   </body>
 </html>

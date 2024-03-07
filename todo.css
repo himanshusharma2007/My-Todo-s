@@ -14,7 +14,9 @@ form {
   min-height: 90vh;
   margin: 2em 2em 0em 2em;
   padding: 1em;
-  border-radius: 20px;
+  border-radius: 30px ;
+  border-bottom-left-radius: 0px ;
+  border-bottom-right-radius: 0px ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +64,12 @@ thead th {
   font-size: x-large;
   color: rgb(56, 56, 89);
 }
-#btnAdd {
+.divbtns{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.btns{
   width: 70px;
   height: 30px;
   border-radius: 10px;
@@ -112,7 +119,7 @@ thead th {
     font-size: small;
     color: rgb(56, 56, 89);
   }
-  #btnAdd {
+.btns {
     width: 40px;
     height: 20px;
     border-radius: 10px;
